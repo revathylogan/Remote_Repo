@@ -80,7 +80,7 @@
                         <goal>deploy-file</goal>
                         </goals>
                         <configuration>
-                        <file>/job/Package/ws/target/Remote_Repo-2.0.war</file>
+                        <file>/var/lib/jenkins/workspace/Deploy/target/Remote_Repo-2.0.war</file>
                         <url>http://172.31.0.229:8090/</url>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>Remote_Repo</artifactId>
