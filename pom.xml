@@ -71,23 +71,23 @@
             </plugin>
         </plugins>
         <plugin>
-    <artifactId>maven-deploy-plugin</artifactId>
-    <version>3.8.6</version>
-    <executions>
-        <execution>
-            <id>deploy-file</id>
-            <phase>deploy</phase>
-            <goals>
-                <goal>deploy-file</goal>
-            </goals>
-            <configuration>
-                <file>/job/Package/ws/target/Remote_Repo-2.0.war</file>
-                <url>http://172.31.0.229:8081/</url>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>Remote_Repo</artifactId>
-            </configuration>
-        </execution>
-    </executions>
-</plugin>
-</build>
+            <artifactId>maven-deploy-plugin</artifactId>
+                <version>3.8.6</version>
+                    <executions>
+                        <execution>
+                        <id>deploy-file</id>
+                        <phase>deploy</phase>
+                        <goals>
+                        <goal>deploy-file</goal>
+                        </goals>
+                        <configuration>
+                        <file>/job/Package/ws/target/Remote_Repo-2.0.war</file>
+                        <url>http://172.31.0.229:8081/</url>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>Remote_Repo</artifactId>
+                        </configuration>
+                        </execution>
+                    </executions>
+       </plugin>
+    </build>
 </project>
