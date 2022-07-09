@@ -69,8 +69,7 @@
                     </execution>
                 </executions>
             </plugin>
-        </plugins>
-        <plugin>
+            <plugin>
             <artifactId>maven-deploy-plugin</artifactId>
                 <version>3.8.6</version>
                     <executions>
@@ -88,6 +87,7 @@
                         </configuration>
                         </execution>
                     </executions>
-       </plugin>
+            </plugin>
+        </plugins>
     </build>
 </project>
