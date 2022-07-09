@@ -71,42 +71,24 @@
                 </executions>
             </plugin>
         </plugins>
+        <plugin>
+    <artifactId>maven-deploy-plugin</artifactId>
+    <version>2.8.2</version>
+    <executions>
+        <execution>
+            <id>deploy-file</id>
+            <phase>deploy</phase>
+            <goals>
+                <goal>deploy-file</goal>
+            </goals>
+            <configuration>
+                <file>/job/Package/ws/target/Remote_Repo-2.0.war</file>
+                <url>http://172.31.0.229/</url>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>Remote_Repo</artifactId>
+            </configuration>
+        </execution>
+    </executions>
+</plugin>
     </build>
-      <profiles>
-    <profile>
-      <id>run-its</id>
-      <build>
-        <pluginManagement>
-          <plugins>
-            <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-invoker-plugin</artifactId>
-              <configuration>
-                <debug>true</debug>
-                <showErrors>true</showErrors>
-                <cloneProjectsTo>${project.build.directory}/it</cloneProjectsTo>
-                <cloneClean>true</cloneClean>
-                <pomIncludes>
-                  <pomInclude>*/pom.xml</pomInclude>
-                  <pomInclude>*/non-default-pom.xml</pomInclude>
-                </pomIncludes>
-                <preBuildHookScript>setup</preBuildHookScript>
-                <postBuildHookScript>verify</postBuildHookScript>
-                <localRepositoryPath>${project.build.directory}/local-repo</localRepositoryPath>
-                <settingsFile>src/it/settings.xml</settingsFile>
-                <addTestClassPath>true</addTestClassPath>
-                <goals>
-                  <goal>deploy</goal>
-                </goals>
-                <properties>
-                  <!-- e.g. ensure that Java7 picks up TLSv1.2 when connecting with Central -->
-                  <https.protocols>${https.protocols}</https.protocols>
-                </properties>
-              </configuration>
-            </plugin>
-          </plugins>
-        </pluginManagement>
-      </build>
-    </profile>
-  </profiles>
 </project>
